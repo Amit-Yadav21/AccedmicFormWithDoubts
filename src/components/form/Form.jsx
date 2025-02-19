@@ -41,7 +41,7 @@ const Form = () => {
       try {
         console.log('Submitting form data:', formData);
         const proxyUrl = "https://thingproxy.freeboard.io/fetch/";
-        const targetUrl = "https://script.google.com/macros/s/AKfycbypMr3EE7TL8Ratiljl044Eu7uzi8aGobZT5aGdIJscblbgIv_QzZ6P8PBOjYQaBAGbfQ/exec";
+        const targetUrl = "https://script.google.com/a/macros/navgurukul.org/s/AKfycbyAoLQNKRCptFWsHs9O39XZe1DVFDylJC6zVrcc4hxkXtmDey2jj6nNvan4XF5UWb_zUA/exec";
 
         const response = await axios.post(`${proxyUrl}${targetUrl}`, formData);
         toast.success("Form submitted successfully");
@@ -237,12 +237,16 @@ const Form = () => {
               {errors.terms && <div className="text-danger">{errors.terms}</div>}
             </div>
             <button
-              className="btn btn-secondary w-100 mt-4 fw-bold"
+              className="btn btn-secondary w-50 mt-4 fw-bold"
               type="submit"
               disabled={loading}
             >
               {loading ? "Submitting..." : "Send"}
             </button>
+            <a href="https://docs.google.com/spreadsheets/d/1Rmgy-T-On8WL8X379PtBN5lUu-rstbLhgOaJ3nSw_FI/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <button type="button" className="btn btn-primary w-50 mt-4 fw-bold">Open google Sheet ( Admin only )
+              </button>
+            </a>
           </div>
         </form>
       </div>
